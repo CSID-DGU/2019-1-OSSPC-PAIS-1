@@ -31,7 +31,7 @@ public class TMain extends JFrame {
 	private Graphics screenGraphic;
 
 	// 백그라운드 이미지 객체 생성
-	private Image background = new ImageIcon(Main.class.getResource("../images/IntroBackground.jpg")).getImage();
+	private Image background = new ImageIcon(Main.class.getResource("../images/IntroBackground.png")).getImage();
 
 	// 메뉴바 객체 생성
 	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getResource("../images/menuBar.png")));
@@ -65,12 +65,6 @@ public class TMain extends JFrame {
 	private ImageIcon backEnteredImage = new ImageIcon(Main.class.getResource("../images/BackEntered.png"));
 	private JButton backBtn = new JButton(backBasicImage);
 
-	// Multi button 관련 객체 생성
-	private Image multiImage = new ImageIcon(Main.class.getResource("../images/MultiBasic.png")).getImage();
-	private ImageIcon multiBasicImage = new ImageIcon(Main.class.getResource("../images/MultiBasic.png"));
-	private ImageIcon multiEnteredImage = new ImageIcon(Main.class.getResource("../images/MultiEntered.png"));
-	private JButton multiBtn = new JButton(multiBasicImage);
-
 	// Setting button 관련 객체 생성
 	private Image settingImage = new ImageIcon(Main.class.getResource("../images/SettingBasic.png")).getImage();
 	private ImageIcon settingBasicImage = new ImageIcon(Main.class.getResource("../images/SettingBasic.png"));
@@ -87,7 +81,6 @@ public class TMain extends JFrame {
 	private boolean isSingleModeScreen = false;
 	private boolean isNormalModeScrren = false;
 	private boolean isHardModeScreen = false;
-	private boolean isMultiModeScreen = false;
 	private boolean isSettingModeScreen = false;
 	
 	public int[] key_setting = new int[11];
@@ -155,7 +148,7 @@ public class TMain extends JFrame {
 		add(menuBar);
 
 		// Single 버튼 관련 처리
-		singleBtn.setBounds(130, 200, 400, 100);
+		singleBtn.setBounds(440, 200, 400, 100);
 		singleBtn.setBorderPainted(false);
 		singleBtn.setContentAreaFilled(false);
 		singleBtn.setFocusPainted(false);
@@ -235,35 +228,8 @@ public class TMain extends JFrame {
 		});
 		add(backBtn);
 
-		// Multi 버튼 관련 처리
-		multiBtn.setBounds(130, 320, 400, 100);
-		multiBtn.setBorderPainted(false);
-		multiBtn.setContentAreaFilled(false);
-		multiBtn.setFocusPainted(false);
-		// Multi Button 이벤트 처리
-		multiBtn.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				multiBtn.setIcon(multiEnteredImage); // 마우스가 Multi 버튼에 올라가면 이미지를 바꿔줌.
-				multiBtn.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 마우스가 올라가면 손가락 모양으로바꿈
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				multiBtn.setIcon(multiBasicImage);
-				multiBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // 마우스를 떼면 다시 디폴트 모양으로 바꿈
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// 멀티 모드 시작 이벤트처리 부분
-				multiModeScreen();
-			}
-		});
-		add(multiBtn);
-
 		// Setting 버튼 관련 처리
-		settingBtn.setBounds(130, 440, 400, 100);
+		settingBtn.setBounds(440, 320, 400, 100);
 		settingBtn.setBorderPainted(false);
 		settingBtn.setContentAreaFilled(false);
 		settingBtn.setFocusPainted(false);
@@ -291,7 +257,7 @@ public class TMain extends JFrame {
 		add(settingBtn);
 
 		// exit 버튼 관련 처리
-		exitBtn.setBounds(130, 560, 400, 100);
+		exitBtn.setBounds(440, 440, 400, 100);
 		exitBtn.setBorderPainted(false);
 		exitBtn.setContentAreaFilled(false);
 		exitBtn.setFocusPainted(false);
@@ -345,10 +311,5 @@ public class TMain extends JFrame {
 		ai = null;
 		ai = new TetrisRenderer();
 		//uc = new Tetris(1, key_setting);
-	}
-	
-	public void multiModeScreen() {
-		dispose();
-		uc = new Tetris(0, key_setting);
 	}
 }

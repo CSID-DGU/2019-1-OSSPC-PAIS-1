@@ -999,6 +999,9 @@ public class Tetris
 		g.setColor(Color.BLACK);
 		g.drawRect(x + FIELD_W + 10 + 1, y + 20 + 1, 50 - 2, 50 - 2);
 
+		g.setColor(Color.BLACK); //점수 배경 테두리
+		g.drawRect(x,  y-80,  200,  70);
+		
 		if (dead)
 		{
 			g.setColor(new Color(0, 0, 0, 80));

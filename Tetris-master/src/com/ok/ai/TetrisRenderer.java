@@ -160,11 +160,11 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		frame.getContentPane().add(aiRestartButton);
 		
 		swapButton = new JButton("\u2194");
-		swapButton.setFont(new Font(Font.DIALOG, Font.BOLD, 24));
-		swapButton.setSize(70, 30);
-		swapButton.setLocation(W / 2 - swapButton.getWidth() / 2 + 160, 410);
-		swapButton.setFocusable(false);
-		frame.getContentPane().add(swapButton);
+	    swapButton.setFont(new Font(Font.DIALOG, Font.BOLD, 24));
+	    swapButton.setSize(70, 30);
+	    swapButton.setLocation(W / 2 - swapButton.getWidth() / 2 + 160, 410);
+	    swapButton.setFocusable(false);
+	    frame.getContentPane().add(swapButton);
 		
 		group = new ButtonGroup();
 		

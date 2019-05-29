@@ -39,27 +39,27 @@ public class Block implements Serializable{
 		if(ghost)g.setColor(ghostColor);
 		else g.setColor(color);
 		g.fillRect((fixGridX+posGridX)*size + TetrisBoard.BOARD_X, (fixGridY+posGridY)*size + TetrisBoard.BOARD_Y, width, height);
-		g.setColor(Color.WHITE);
+		g.setColor(Color.BLACK);
 		g.drawRect((fixGridX+posGridX)*size + TetrisBoard.BOARD_X, (fixGridY+posGridY)*size + TetrisBoard.BOARD_Y, width, height);
 		g.drawLine((fixGridX+posGridX)*size + TetrisBoard.BOARD_X, (fixGridY+posGridY)*size + TetrisBoard.BOARD_Y, (fixGridX+posGridX)*size+width + TetrisBoard.BOARD_X, (fixGridY+posGridY)*size+height + TetrisBoard.BOARD_Y);
 		g.drawLine((fixGridX+posGridX)*size + TetrisBoard.BOARD_X, (fixGridY+posGridY)*size+height + TetrisBoard.BOARD_Y, (fixGridX+posGridX)*size+width + TetrisBoard.BOARD_X, (fixGridY+posGridY)*size + TetrisBoard.BOARD_Y);
 		if(ghost)g.setColor(ghostColor);
 		else g.setColor(color);
 		g.fillRect((fixGridX+posGridX)*size+gap + TetrisBoard.BOARD_X, (fixGridY+posGridY)*size+gap + TetrisBoard.BOARD_Y, width-gap*2, height-gap*2);
-		g.setColor(Color.WHITE);
+		g.setColor(Color.BLACK);
 		g.drawRect((fixGridX+posGridX)*size+gap + TetrisBoard.BOARD_X, (fixGridY+posGridY)*size+gap + TetrisBoard.BOARD_Y, width-gap*2, height-gap*2);
 	}
 	
 	public void drawEnemyBlock(Graphics g, int x, int y){
 		g.setColor(color);
 		g.fillRect(x*size, y*size, width, height);
-		g.setColor(Color.WHITE);
+		g.setColor(Color.BLACK);
 		g.drawRect(x*size, y*size, width, height);
 		g.drawLine(x*size, y*size, x*size+width, y*size+height);
 		g.drawLine(x*size, y*size+height, x*size+width, y*size);
 		g.setColor(color);
 		g.fillRect(x*size+gap, y*size+gap, width-gap*2, height-gap*2);
-		g.setColor(Color.WHITE);
+		g.setColor(Color.BLACK);
 		g.drawRect(x*size+gap, y*size+gap, width-gap*2, height-gap*2);
 	}
 	

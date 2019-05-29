@@ -33,23 +33,23 @@ import com.ok.network.GameServer;
 
 public class Tetris extends JFrame implements ActionListener {
 
-	// 硫붾돱諛� 媛앹껜 �깮�꽦
+	// 메뉴바 객체 생성
 	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getResource("../images/menuBar.png")));
 
-	// 硫붾돱 諛� �쐞�쓽 exit button 愿��젴 媛앹껜 �깮�꽦
+	// 메뉴 바 위의 exit button 관련 객체 생성
 	private ImageIcon exitButtonBasicImage = new ImageIcon(Main.class.getResource("../images/exitButtonBasic.png"));
 	private ImageIcon exitButtonEnteredImage = new ImageIcon(Main.class.getResource("../images/exitButtonEntered.png"));
 	private JButton exitButton = new JButton(exitButtonBasicImage);
 
-	// 留덉슦�뒪 �씠踰ㅽ듃�뿉 �솢�슜�븯湲� �쐞�븳 留덉슦�뒪 x, y 醫뚰몴
+	// 마우스 이벤트에 활용하기 위한 마우스 x, y 좌표
 	private int mouseX, mouseY;
 
 	private static final long serialVersionUID = 1L;
 	private GameServer server;
 	private GameClient client;
 	private TetrisBoard board;
-	private JMenuItem itemServerStart = new JMenuItem("�꽌踰� 留뚮뱾湲�");
-	private JMenuItem itemClientStart = new JMenuItem("�겢�씪�씠�뼵�듃 �젒�냽�븯湲�");
+	private JMenuItem itemServerStart = new JMenuItem("서버 만들기");
+	private JMenuItem itemClientStart = new JMenuItem("클라이언트 접속하기");
 
 	private boolean isNetwork;
 	private boolean isServer;
@@ -58,40 +58,40 @@ public class Tetris extends JFrame implements ActionListener {
 	public int mode = 0;
 
 	public Tetris(int mode, int[] key_setting) {
-		setUndecorated(true); // 湲곕낯 硫붾돱諛붽� 蹂댁씠吏� �븡�쓬. -> �깉濡쒖슫 menuBar瑜� �꽔湲� �쐞�븳 �옉�뾽
+		setUndecorated(true); // 기본 메뉴바가 보이지 않음. -> 새로운 menuBar를 넣기 위한 작업
 		setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT + 30);
-		setResizable(false); // �솕硫� �겕湲� �닔�젙 遺덇��뒫
-		setLocationRelativeTo(null); // �솕硫� �젙以묒븰�뿉 �쑉寃� �븿.
+		setResizable(false); // 화면 크기 수정 불가능
+		setLocationRelativeTo(null); // 화면 정중앙에 뜨게 함.
 		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
-		setBackground(Color.WHITE);
+		setBackground(Color.BLACK);
 		// setBackground(new Color(0, 0, 0, 0));
-		setLayout(null); // �솕硫댁뿉 諛곗튂�릺�뒗 踰꾪듉�씠�굹 label�쓣 洹� �옄由� 洹몃�濡� �뱾�뼱媛�寃� �븿.
+		setLayout(null); // 화면에 배치되는 버튼이나 label을 그 자리 그대로 들어가게 함.
 		JMenuBar mnBar = new JMenuBar();
-		JMenu mnGame = new JMenu("寃뚯엫�븯湲�");
+		JMenu mnGame = new JMenu("게임하기");
 		this.mode = mode;
 		if (mode == 1)
 			board = new TetrisBoard(this, client, true, key_setting);
 		else
 			board = new TetrisBoard(this, client, false, key_setting);
 
-		// Menu bar exit 踰꾪듉 愿��젴 泥섎━
+		// Menu bar exit 버튼 관련 처리
 		exitButton.setBounds(1245, 0, 30, 30);
 		exitButton.setBorderPainted(false);
 		exitButton.setContentAreaFilled(false);
 		exitButton.setFocusPainted(false);
-		// exit Button �씠踰ㅽ듃 泥섎━
+		// exit Button 이벤트 처리
 		exitButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				exitButton.setIcon(exitButtonEnteredImage); // 留덉슦�뒪媛� exit 踰꾪듉�뿉 �삱�씪媛�硫� �씠誘몄�瑜� 諛붽퓭以�.
-				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 留덉슦�뒪媛� �삱�씪媛�硫� �넀媛��씫 紐⑥뼇�쑝濡쒕컮轅�
+				exitButton.setIcon(exitButtonEnteredImage); // 마우스가 exit 버튼에 올라가면 이미지를 바꿔줌.
+				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 마우스가 올라가면 손가락 모양으로바꿈
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				exitButton.setIcon(exitButtonBasicImage);
-				exitButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // 留덉슦�뒪瑜� �뼹硫� �떎�떆 �뵒�뤃�듃 紐⑥뼇�쑝濡� 諛붽퓞
+				exitButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // 마우스를 떼면 다시 디폴트 모양으로 바꿈
 			}
 
 			@Override
@@ -102,19 +102,19 @@ public class Tetris extends JFrame implements ActionListener {
 		});
 		add(exitButton);
 
-		// 硫붾돱諛� �씠踰ㅽ듃
+		// 메뉴바 이벤트
 		menuBar.setBounds(0, 0, 1280, 30);
 		menuBar.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) { // 留덉슦�뒪 �겢由� �떆 x,y 醫뚰몴瑜� �뼸�뼱�샂.
+			public void mousePressed(MouseEvent e) { // 마우스 클릭 시 x,y 좌표를 얻어옴.
 				mouseX = e.getX();
 				mouseY = e.getY();
 			}
 		});
-		menuBar.addMouseMotionListener(new MouseMotionAdapter() { // 硫붾돱諛붾�� �뱶�옒洹� �븷�븣 �솕硫댁씠 �뵲�씪�삤寃� �븯�뒗 �씠踰ㅽ듃
+		menuBar.addMouseMotionListener(new MouseMotionAdapter() { // 메뉴바를 드래그 할때 화면이 따라오게 하는 이벤트
 			public void mouseDragged(MouseEvent e) {
 				int x = e.getXOnScreen();
 				int y = e.getYOnScreen();
-				setLocation(x - mouseX, y - mouseY); // JFrame�쓽 �쐞移섎�� 諛붽퓭以�
+				setLocation(x - mouseX, y - mouseY); // JFrame의 위치를 바꿔줌
 			}
 		});
 		add(menuBar);
@@ -168,10 +168,10 @@ public class Tetris extends JFrame implements ActionListener {
 		String nickName = null;
 		if (e.getSource() == itemServerStart) {
 
-			String sp = JOptionPane.showInputDialog("�룷�듃 踰덊샇瑜� �엯�젰�븯�꽭�슂", "9500");
+			String sp = JOptionPane.showInputDialog("포트 번호를 입력하세요", "9500");
 			if (sp != null && !sp.equals(""))
 				port = Integer.parseInt(sp);
-			nickName = JOptionPane.showInputDialog("�땳�꽕�엫�쓣 �엯�젰�븯�꽭�슂", "default");
+			nickName = JOptionPane.showInputDialog("닉네임을 입력하세요", "default");
 
 			if (port != 0) {
 				if (server == null)
@@ -203,11 +203,11 @@ public class Tetris extends JFrame implements ActionListener {
 				e1.printStackTrace();
 			}
 
-			ip = JOptionPane.showInputDialog("IP 二쇱냼瑜� �엯�젰�븯�꽭�슂.", ip);
-			String sp = JOptionPane.showInputDialog("port 踰덊샇瑜� �엯�젰�븯�꽭�슂", "9500");
+			ip = JOptionPane.showInputDialog("IP 주소를 입력하세요.", ip);
+			String sp = JOptionPane.showInputDialog("port 번호를 입력하세요", "9500");
 			if (sp != null && !sp.equals(""))
 				port = Integer.parseInt(sp);
-			nickName = JOptionPane.showInputDialog("�땳�꽕�엫�쓣 �엯�젰�븯�꽭�슂", "default");
+			nickName = JOptionPane.showInputDialog("닉네임을 입력하세요", "default");
 
 			if (ip != null) {
 				client = new GameClient(this, ip, port, nickName);

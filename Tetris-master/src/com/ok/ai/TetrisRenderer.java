@@ -139,7 +139,6 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		newButton.setFocusable(false);
 		frame.getContentPane().add(newButton);
 		newButton.setFont(new Font("digital-7", Font.BOLD, 13));
-		newButton.setBackground(Color.PINK);
 		
 		
 		keyButton = new JButton("Settings");
@@ -148,16 +147,14 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		keyButton.setFocusable(false);
 		frame.getContentPane().add(keyButton);
 		keyButton.setFont(new Font("digital-7", Font.BOLD, 13));
-		keyButton.setBackground(Color.PINK);
 		
 		restartButton = new JButton("Restart");
 		restartButton.setSize(restartButton.getPreferredSize());
-		
+		restartButton.setLocation(25 + Tetris.FIELD_W / 2 + Tetris.DSP_W - restartButton.getWidth() / 2 + 160, 375);
 		restartButton.setFocusable(false);
 		restartButton.setVisible(false);
 		frame.getContentPane().add(restartButton);
 		restartButton.setFont(new Font("digital-7", Font.BOLD, 13));
-		restartButton.setBackground(Color.PINK);
 		
 		aiRestartButton = new JButton("Restart");
 		aiRestartButton.setSize(aiRestartButton.getPreferredSize());
@@ -166,7 +163,6 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		aiRestartButton.setVisible(false);
 		frame.getContentPane().add(aiRestartButton);
 		aiRestartButton.setFont(new Font("digital-7", Font.BOLD, 13));
-		aiRestartButton.setBackground(Color.PINK);
 		
 		swapButton = new JButton("\u2194");
 	    swapButton.setFont(new Font(Font.DIALOG, Font.BOLD, 24));
@@ -174,7 +170,6 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 	    swapButton.setLocation(W / 2 - swapButton.getWidth() / 2 + 160, 410);
 	    swapButton.setFocusable(false);
 	    frame.getContentPane().add(swapButton);
-	    swapButton.setBackground(Color.PINK);
 		
 		group = new ButtonGroup();
 		
@@ -185,7 +180,6 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		group.add(offButton);
 		frame.getContentPane().add(offButton);
 		offButton.setFont(new Font("digital-7", Font.BOLD, 11));
-		offButton.setBackground(Color.PINK);
 		
 		slowButton = new JRadioButton("Slow");
 		slowButton.setSize(slowButton.getPreferredSize());
@@ -194,7 +188,6 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		group.add(slowButton);
 		frame.getContentPane().add(slowButton);
 		slowButton.setFont(new Font("digital-7", Font.BOLD, 13));
-		slowButton.setBackground(Color.PINK);
 		
 		medButton = new JRadioButton("Medium");
 		medButton.setSize(medButton.getPreferredSize());
@@ -203,7 +196,6 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		group.add(medButton);
 		frame.getContentPane().add(medButton);
 		medButton.setFont(new Font("digital-7", Font.BOLD, 13));
-		medButton.setBackground(Color.PINK);
 		
 		quickButton = new JRadioButton("Fast");
 		quickButton.setSize(quickButton.getPreferredSize());
@@ -212,7 +204,6 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		group.add(quickButton);
 		frame.getContentPane().add(quickButton);
 		quickButton.setFont(new Font("digital-7", Font.BOLD, 13));
-		quickButton.setBackground(Color.PINK);
 		
 		insaneButton = new JRadioButton("Insane");
 		insaneButton.setSize(insaneButton.getPreferredSize());
@@ -221,8 +212,7 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		group.add(insaneButton);
 		frame.getContentPane().add(insaneButton);
 		insaneButton.setFont(new Font("digital-7", Font.BOLD, 13));
-		insaneButton.setBackground(Color.PINK);
-		
+
 		frame.addKeyListener(this);
 		frame.setFocusable(true);
 		frame.getContentPane().add(this);

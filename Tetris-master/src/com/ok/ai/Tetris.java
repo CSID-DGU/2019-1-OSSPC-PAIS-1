@@ -822,7 +822,7 @@ public class Tetris
 												// I, S, T, O, Z, L, J
 	protected static final Color[] COLORS = {null, Color.CYAN, Color.RED, Color.MAGENTA, Color.YELLOW, Color.GREEN, Color.ORANGE, new Color(100, 150, 255), new Color(190, 190, 190)};
 	protected static final Font F_LINES = new Font("digital-7", Font.BOLD, 24);
-	protected static final Font F_TIME = new Font("digital-7", Font.BOLD, 14);
+	protected static final Font F_TIME = new Font(Font.SANS_SERIF, Font.BOLD, 14);
 	protected static final Font F_UI = new Font("digital-7", Font.BOLD, 14);
 	protected static final Font F_PAUSE = new Font("digital-7", Font.BOLD, 36);
 	protected static final Font F_GAMEOVER = new Font("digital-7", Font.BOLD, 48);
@@ -977,7 +977,7 @@ public class Tetris
 			}
 		}
 
-		g.setColor(Color.BLUE);
+		g.setColor(Color.WHITE);
 		g.setFont(F_UI);
 		drawCentered(g, "Hold", x - DSP_W / 2, y + 10);
 		g.drawRect(x - DSP_W + 10, y + 20, 50, 50);
@@ -985,22 +985,22 @@ public class Tetris
 		if (stored != -1)
 			drawTetrimino(g, stored, x - DSP_W / 2, y + 45, 10);
 
-		g.setColor(Color.BLUE);
+		g.setColor(Color.WHITE);
 		drawCentered(g, "Next", x + FIELD_W + DSP_W / 2, y + 10);
 
 		for (int i = 0; i < AHEAD; i++)
 		{
-			g.setColor(Color.BLACK);
+			g.setColor(Color.WHITE);
 			int yoffset = i * 50 + (i > 0 ? 8 : 0);
 			
 			g.drawRect(x + FIELD_W + 10, y + 20 + yoffset, 50, 50);
 			drawTetrimino(g, fMoves[i], x + FIELD_W + DSP_W / 2, y + 45 + yoffset, 10);
 		}
-		g.setColor(Color.BLACK);
+		g.setColor(Color.WHITE);
 		g.drawRect(x + FIELD_W + 10 + 1, y + 20 + 1, 50 - 2, 50 - 2);
 
-		g.setColor(Color.BLACK); //점수 배경 테두리
-		g.drawRect(x,  y-80,  200,  70);
+		g.setColor(Color.WHITE);
+		g.drawRect(x, y-84, 200, 70);
 		
 		if (dead)
 		{
@@ -1085,7 +1085,7 @@ public class Tetris
 				g.setColor(COLORS[id]);
 				g.fillRect(x + (i - frow) * sqrw, y + (j - fcol) * sqrw, sqrw, sqrw);
 
-				g.setColor(Color.BLACK);
+				g.setColor(Color.WHITE);
 				g.drawRect(x + (i - frow) * sqrw, y + (j - fcol) * sqrw, sqrw, sqrw);
 			}
 		}

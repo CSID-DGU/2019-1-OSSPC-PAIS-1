@@ -346,7 +346,7 @@ public class TetrisBattle extends Tetris
 		
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-		g.setColor(Color.BLACK);
+		g.setColor(Color.WHITE);
 		g.setFont(F_LINES);
 		g.drawString("" + linesSent + " lines sent", x + 20, y + 10);
 		

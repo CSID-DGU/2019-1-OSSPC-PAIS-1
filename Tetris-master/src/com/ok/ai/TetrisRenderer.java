@@ -347,6 +347,8 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 			else
 				game.tick();
 			aiGame.tick();
+			if (game.isOver())
+	            aiGame.die(); // 게임over시 ai도 게임over
 		}
 		else if (source == painter)
 			repaint();

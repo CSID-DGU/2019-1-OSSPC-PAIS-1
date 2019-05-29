@@ -43,13 +43,13 @@ import com.ok.shape.RightUp;
 
 public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseListener, ActionListener {
 
-	// Start button 관련 객체 생성
+	// Start button 愿��젴 媛앹껜 �깮�꽦
 	private Image startImage = new ImageIcon(Main.class.getResource("../images/StartBasic.png")).getImage();
 	private ImageIcon startBasicImage = new ImageIcon(Main.class.getResource("../images/StartBasic.png"));
 	private ImageIcon startEnteredImage = new ImageIcon(Main.class.getResource("../images/StartEntered.png"));
 	private JButton startBtn = new JButton(startBasicImage);
 
-	// Exit button 관련 객체 생성
+	// Exit button 愿��젴 媛앹껜 �깮�꽦
 	private Image exitImage = new ImageIcon(Main.class.getResource("../images/SmallExitBasic.png")).getImage();
 	private ImageIcon exitBasicImage = new ImageIcon(Main.class.getResource("../images/SmallExitBasic.png"));
 	private ImageIcon exitEnteredImage = new ImageIcon(Main.class.getResource("../images/SmallExitEntered.png"));
@@ -73,10 +73,10 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 
 	private SystemMessageArea systemMsg;
 	private MessageArea messageArea;
-	private JButton btnStart = new JButton("게임 시작");
-	private JButton btnExit = new JButton("게임 종료");
-	private JCheckBox checkGhost = new JCheckBox("고스트", true);
-	private JCheckBox checkGrid = new JCheckBox("그리드", true);
+	private JButton btnStart = new JButton("寃뚯엫 �떆�옉");
+	private JButton btnExit = new JButton("寃뚯엫 醫낅즺");
+	private JCheckBox checkGhost = new JCheckBox("怨좎뒪�듃", true);
+	private JCheckBox checkGrid = new JCheckBox("洹몃━�뱶", true);
 	private Integer[] lv = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
 	private JComboBox<Integer> comboSpeed = new JComboBox<Integer>(lv);
 
@@ -110,7 +110,7 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 		this.tetris = tetris;
 		this.client = _client;
 		this.isSingle = isSingle;
-		if (isSingle == false) // 클라이언트 모드
+		if (isSingle == false) // �겢�씪�씠�뼵�듃 紐⑤뱶
 		{
 			systemMsg = new SystemMessageArea(21, 330, 100, 240);
 			messageArea = new MessageArea(this, 500, 460, 360, 130);
@@ -125,7 +125,7 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 		}
 		this.enemy = new EnemyBoard();
 		this.setBounds(0, 30, Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
-		this.setBackground(Color.BLACK);
+		this.setBackground(Color.WHITE);
 		this.addKeyListener(this);
 		this.addMouseListener(this);
 		this.setLayout(null);
@@ -133,29 +133,29 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 		this.key_set = key_setting;
 		
 
-		// Start 버튼 관련 처리
+		// Start 踰꾪듉 愿��젴 泥섎━
 		startBtn.setBounds(475, 600, 220, 100);
 		startBtn.setBorderPainted(false);
 		startBtn.setContentAreaFilled(false);
 		startBtn.setFocusPainted(false);
 		startBtn.setFocusable(false);
-		// Start Button 이벤트 처리
+		// Start Button �씠踰ㅽ듃 泥섎━
 		startBtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				startBtn.setIcon(startEnteredImage); // 마우스가 exit 버튼에 올라가면 이미지를 바꿔줌.
-				startBtn.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 마우스가 올라가면 손가락 모양으로바꿈
+				startBtn.setIcon(startEnteredImage); // 留덉슦�뒪媛� exit 踰꾪듉�뿉 �삱�씪媛�硫� �씠誘몄�瑜� 諛붽퓭以�.
+				startBtn.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 留덉슦�뒪媛� �삱�씪媛�硫� �넀媛��씫 紐⑥뼇�쑝濡쒕컮轅�
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				startBtn.setIcon(startBasicImage);
-				startBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // 마우스를 떼면 다시 디폴트 모양으로 바꿈
+				startBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // 留덉슦�뒪瑜� �뼹硫� �떎�떆 �뵒�뤃�듃 紐⑥뼇�쑝濡� 諛붽퓞
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// 게임 시작 이벤트처리 부분
+				// 寃뚯엫 �떆�옉 �씠踰ㅽ듃泥섎━ 遺�遺�
 				if (client != null) {
 					client.gameStart((int) comboSpeed.getSelectedItem());
 				} else if (isSingle == true) {
@@ -165,29 +165,29 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 		});
 		add(startBtn);
 
-		// Start 버튼 관련 처리
+		// Start 踰꾪듉 愿��젴 泥섎━
 		exitBtn.setBounds(700, 600, 220, 100);
 		exitBtn.setBorderPainted(false);
 		exitBtn.setContentAreaFilled(false);
 		exitBtn.setFocusPainted(false);
 		exitBtn.setFocusable(false);
-		// Start Button 이벤트 처리
+		// Start Button �씠踰ㅽ듃 泥섎━
 		exitBtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				exitBtn.setIcon(exitEnteredImage); // 마우스가 exit 버튼에 올라가면 이미지를 바꿔줌.
-				exitBtn.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 마우스가 올라가면 손가락 모양으로바꿈
+				exitBtn.setIcon(exitEnteredImage); // 留덉슦�뒪媛� exit 踰꾪듉�뿉 �삱�씪媛�硫� �씠誘몄�瑜� 諛붽퓭以�.
+				exitBtn.setCursor(new Cursor(Cursor.HAND_CURSOR)); // 留덉슦�뒪媛� �삱�씪媛�硫� �넀媛��씫 紐⑥뼇�쑝濡쒕컮轅�
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				exitBtn.setIcon(exitBasicImage);
-				exitBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // 마우스를 떼면 다시 디폴트 모양으로 바꿈
+				exitBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // 留덉슦�뒪瑜� �뼹硫� �떎�떆 �뵒�뤃�듃 紐⑥뼇�쑝濡� 諛붽퓞
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// 게임 종료 이벤트
+				// 寃뚯엫 醫낅즺 �씠踰ㅽ듃
 				if (client != null) {
 					if (tetris.isNetwork()) {
 						client.closeNetwork(tetris.isServer());
@@ -201,9 +201,9 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 		add(exitBtn);
 
 		checkGhost.setBounds(PANEL_WIDTH - BLOCK_SIZE * 7 + 35, 70, 85, 20);
-		checkGhost.setBackground(Color.BLACK);
+		checkGhost.setBackground(Color.WHITE);
 		checkGhost.setForeground(Color.WHITE);
-		checkGhost.setFont(new Font("맑은 고딕", Font.BOLD, 13));
+		checkGhost.setFont(new Font("留묒� 怨좊뵓", Font.BOLD, 13));
 		checkGhost.addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent arg0) {
@@ -213,9 +213,9 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 			}
 		});
 		checkGrid.setBounds(PANEL_WIDTH - BLOCK_SIZE * 7 + 35, 50, 85, 20);
-		checkGrid.setBackground(Color.BLACK);
+		checkGrid.setBackground(Color.WHITE);
 		checkGrid.setForeground(Color.WHITE);
-		checkGrid.setFont(new Font("맑은 고딕", Font.BOLD, 13));
+		checkGrid.setFont(new Font("留묒� 怨좊뵓", Font.BOLD, 13));
 		checkGrid.addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent arg0) {
@@ -244,7 +244,7 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 	}
 
 	/**
-	 * TODO : 寃뚯엫�떆�옉 寃뚯엫�쓣 �떆�옉�븳�떎.
+	 * TODO : 野껊슣�뿫占쎈뻻占쎌삂 野껊슣�뿫占쎌뱽 占쎈뻻占쎌삂占쎈립占쎈뼄.
 	 */
 
 	public void gameStart(int speed) {
@@ -283,27 +283,27 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 	protected void paintComponent(Graphics g) {
 		g.clearRect(0, 0, this.getWidth(), this.getHeight() + 1);
 
-		g.setColor(Color.BLACK);
+		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, 1280, 720);
 
 		// g.fillRect(0, BOARD_Y, (maxX + minX + 13) * BLOCK_SIZE + 1 + 300, maxY *
 		// BLOCK_SIZE + 1);
 
 		Font font = g.getFont();
-		g.setFont(new Font("맑은 고딕", Font.BOLD, 13));
+		g.setFont(new Font("留묒� 怨좊뵓", Font.BOLD, 13));
 		g.setFont(font);
 		if (isSingle == false) {
 			g.setColor(Color.WHITE);
 			g.drawString("ip : " + ip + "     port : " + port, 20, 65);
 
-			g.drawString("닉네임 : " + nickName, 20, 85);
+			g.drawString("�땳�꽕�엫 : " + nickName, 20, 85);
 		} else {
-			g.setFont(new Font("맑은 고딕", Font.BOLD, 13));
+			g.setFont(new Font("留묒� 怨좊뵓", Font.BOLD, 13));
 			g.setColor(Color.WHITE);
-			g.drawString("속도", PANEL_WIDTH - BLOCK_SIZE * 10, 65);
+			g.drawString("�냽�룄", PANEL_WIDTH - BLOCK_SIZE * 10, 65);
 		}
 
-		g.setColor(Color.BLACK);
+		g.setColor(Color.WHITE);
 		g.fillRect(BOARD_X + BLOCK_SIZE * minX, BOARD_Y, maxX * BLOCK_SIZE + 1, maxY * BLOCK_SIZE + 1);
 		g.fillRect(BLOCK_SIZE * minX, BOARD_Y + BLOCK_SIZE, BLOCK_SIZE * 5, BLOCK_SIZE * 5);
 		g.fillRect(BOARD_X + BLOCK_SIZE * minX + (maxX + 1) * BLOCK_SIZE + 1, BOARD_Y + BLOCK_SIZE, BLOCK_SIZE * 5,
@@ -321,37 +321,37 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 
 		if (usingGrid) {
 			g.setColor(Color.WHITE);
-			// 게임 보드판 테두리
+			// 寃뚯엫 蹂대뱶�뙋 �뀒�몢由�
 			g.drawRect(BOARD_X + BLOCK_SIZE * minX, BOARD_Y, BLOCK_SIZE * 10 + 3, BLOCK_SIZE * 21 + 3);
-			// 홀드 테두리
+			// ���뱶 �뀒�몢由�
 			g.drawRect(BLOCK_SIZE * minX, BOARD_Y + BLOCK_SIZE, BLOCK_SIZE * 5, BLOCK_SIZE * 5);
-			// 넥스트 테두리
+			// �꽖�뒪�듃 �뀒�몢由�
 			g.drawRect(BOARD_X + BLOCK_SIZE * minX + (maxX + 1) * BLOCK_SIZE + 1, BOARD_Y + BLOCK_SIZE, BLOCK_SIZE * 5,
 					BLOCK_SIZE * 5);
-			// 대기 테두리
+			// ��湲� �뀒�몢由�
 			g.drawRect(BOARD_X + BLOCK_SIZE * minX + (maxX + 1) * BLOCK_SIZE + 1, BOARD_Y + BLOCK_SIZE * 8 - 10,
 					BLOCK_SIZE * 5, BLOCK_SIZE * 14);
-			// 고스트, 테두리 표시의 테두리
+			// 怨좎뒪�듃, �뀒�몢由� �몴�떆�쓽 �뀒�몢由�
 			g.drawRect(370, 45, 92, 50);
 			g.setColor(Color.darkGray);
-			for (int i = 1; i < maxY; i++) // 게임 보드판 가로 그리기
+			for (int i = 1; i < maxY; i++) // 寃뚯엫 蹂대뱶�뙋 媛�濡� 洹몃━湲�
 				g.drawLine(BOARD_X + BLOCK_SIZE * minX, BOARD_Y + BLOCK_SIZE * (i + minY),
 						BOARD_X + (maxX + minX) * BLOCK_SIZE, BOARD_Y + BLOCK_SIZE * (i + minY));
-			for (int i = 1; i < maxX; i++) // 게임 보드판 세로 그리기
+			for (int i = 1; i < maxX; i++) // 寃뚯엫 蹂대뱶�뙋 �꽭濡� 洹몃━湲�
 				g.drawLine(BOARD_X + BLOCK_SIZE * (i + minX), BOARD_Y + BLOCK_SIZE * minY,
 						BOARD_X + BLOCK_SIZE * (i + minX), BOARD_Y + BLOCK_SIZE * (minY + maxY));
-			for (int i = 1; i < 5; i++) // HOLD 가로 그리기
+			for (int i = 1; i < 5; i++) // HOLD 媛�濡� 洹몃━湲�
 				g.drawLine(BLOCK_SIZE * minX, BOARD_Y + BLOCK_SIZE * (i + 1), BLOCK_SIZE * (minX + 5) - 1,
 						BOARD_Y + BLOCK_SIZE * (i + 1));
-			for (int i = 1; i < 5; i++) // HOLD 세로 그리기
+			for (int i = 1; i < 5; i++) // HOLD �꽭濡� 洹몃━湲�
 				g.drawLine(BLOCK_SIZE * (minY + i + 1), BOARD_Y + BLOCK_SIZE, BLOCK_SIZE * (minY + i + 1),
 						BOARD_Y + BLOCK_SIZE * (minY + 6) - 1);
 
-			for (int i = 1; i < 5; i++) // NEXT 가로 그리기
+			for (int i = 1; i < 5; i++) // NEXT 媛�濡� 洹몃━湲�
 				g.drawLine(BOARD_X + BLOCK_SIZE * minX + (maxX + 1) * BLOCK_SIZE + 1, BOARD_Y + BLOCK_SIZE * (i + 1),
 						BOARD_X + BLOCK_SIZE * minX + (maxX + 1) * BLOCK_SIZE + BLOCK_SIZE * 5,
 						BOARD_Y + BLOCK_SIZE * (i + 1));
-			for (int i = 1; i < 5; i++) // NEXT 세로 그리기
+			for (int i = 1; i < 5; i++) // NEXT �꽭濡� 洹몃━湲�
 				g.drawLine(BOARD_X + BLOCK_SIZE * minX + (maxX + 1 + i) * BLOCK_SIZE + 1, BOARD_Y + BLOCK_SIZE,
 						BOARD_X + BLOCK_SIZE * minX + BLOCK_SIZE + BLOCK_SIZE * (10 + i) + 1,
 						BOARD_Y + BLOCK_SIZE * 6 - 1);
@@ -492,7 +492,7 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 	}// run()
 
 	/**
-	 * 留�(蹂댁씠湲�, �끉由�)�쓣 �긽�븯濡� �씠�룞�븳�떎.
+	 * 筌랃옙(癰귣똻�뵠疫뀐옙, 占쎈걠�뵳占�)占쎌뱽 占쎄맒占쎈릭嚥∽옙 占쎌뵠占쎈짗占쎈립占쎈뼄.
 	 * 
 	 * @param lineNumber
 	 * @param num
@@ -500,52 +500,52 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 	 */
 	public void dropBoard(int lineNumber, int num) {
 
-		// 留듭쓣 �뼥�뼱�듃由곕떎.
+		// 筌띾벊�뱽 占쎈샵占쎈선占쎈뱜�뵳怨뺣뼄.
 		this.dropMap(lineNumber, num);
 
-		// 醫뚰몴諛붽퓭二쇨린(1留뚰겮利앷�)
+		// �넫�슦紐닺쳸遺쏀벊雅뚯눊由�(1筌띾슦寃�筌앹빓占�)
 		this.changeTetrisBlockLine(lineNumber, num);
 
-		// �떎�떆 泥댄겕�븯湲�
+		// 占쎈뼄占쎈뻻 筌ｋ똾寃뺧옙釉�疫뀐옙
 		this.checkMap();
 		if (isSingle == false && isPlay)
 		{
 			testfun();
 			GoBlind();
 		}
-		// 怨좎뒪�듃 �떎�떆 肉뚮━湲�
+		// �⑥쥙�뮞占쎈뱜 占쎈뼄占쎈뻻 �굢�슢�봺疫뀐옙
 		this.showGhost();
 	}
 
 	/**
-	 * lineNumber�쓽 �쐞履� �씪�씤�뱾�쓣 紐⑤몢 num移몄뵫 �궡由곕떎.
+	 * lineNumber占쎌벥 占쎌맄筌잞옙 占쎌뵬占쎌뵥占쎈굶占쎌뱽 筌뤴뫀紐� num燁삳챷逾� 占쎄땀�뵳怨뺣뼄.
 	 * 
 	 * @param lineNumber
 	 * @param num
-	 *            移몄닔 -1,1
+	 *            燁삳챷�땾 -1,1
 	 */
 	private void dropMap(int lineNumber, int num) {
 		if (num == 1) {
-			// �븳以꾩뵫 �궡由ш린
+			// 占쎈립餓κ쑴逾� 占쎄땀�뵳�덈┛
 			for (int i = lineNumber; i > 0; i--) {
 				for (int j = 0; j < map[i].length; j++) {
 					map[i][j] = map[i - 1][j];
 				}
 			}
 
-			// 留� �쐵以꾩� null濡� 留뚮뱾湲�
+			// 筌랃옙 占쎌맮餓κ쑴占� null嚥∽옙 筌띾슢諭얏묾占�
 			for (int j = 0; j < map[0].length; j++) {
 				map[0][j] = null;
 			}
 		} else if (num == -1) {
-			// �븳以꾩뵫 �삱由ш린
+			// 占쎈립餓κ쑴逾� 占쎌궞�뵳�덈┛
 			for (int i = 1; i <= lineNumber; i++) {
 				for (int j = 0; j < map[i].length; j++) {
 					map[i - 1][j] = map[i][j];
 				}
 			}
 
-			// removeLine�� null濡� 留뚮뱾湲�
+			// removeLine占쏙옙 null嚥∽옙 筌띾슢諭얏묾占�
 			for (int j = 0; j < map[0].length; j++) {
 				map[lineNumber][j] = null;
 			}
@@ -669,7 +669,7 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 	}
 
 	public void testfun() {
-		// System.out.println("맵 보내기 실험중");
+		// System.out.println("留� 蹂대궡湲� �떎�뿕以�");
 		Block[] temp = new Block[maxX * maxY];
 		for (int a = 0; a < 21; a++) {
 			for (int b = 0; b < 10; b++) {

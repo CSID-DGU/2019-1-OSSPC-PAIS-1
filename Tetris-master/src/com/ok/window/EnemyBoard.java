@@ -22,7 +22,7 @@ public class EnemyBoard extends JPanel{
 	}
 	
 	protected void paintComponent(Graphics g) {
-		g.setColor(Color.black);
+		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, EPANEL_WIDTH, EPANEL_HEIGHT);
 		g.setColor(Color.darkGray);
 		for (int i = 0; i < 10; i++)

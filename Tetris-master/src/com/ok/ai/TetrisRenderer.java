@@ -160,11 +160,11 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		frame.getContentPane().add(aiRestartButton);
 		
 		swapButton = new JButton("\u2194");
-		swapButton.setFont(new Font(Font.DIALOG, Font.BOLD, 24));
-		swapButton.setSize(70, 30);
-		swapButton.setLocation(W / 2 - swapButton.getWidth() / 2 + 160, 410);
-		swapButton.setFocusable(false);
-		frame.getContentPane().add(swapButton);
+	    swapButton.setFont(new Font(Font.DIALOG, Font.BOLD, 24));
+	    swapButton.setSize(70, 30);
+	    swapButton.setLocation(W / 2 - swapButton.getWidth() / 2 + 160, 410);
+	    swapButton.setFocusable(false);
+	    frame.getContentPane().add(swapButton);
 		
 		group = new ButtonGroup();
 		
@@ -306,7 +306,7 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 	{
 		super.paint(g);
 	      
-	      g.setColor(Color.BLACK);
+	      g.setColor(Color.WHITE);
 	      g.fillRect(0, 0, 1280, 720);
 	            
 	      game.drawTo((Graphics2D)(g), 100, 100);
@@ -315,7 +315,7 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 	      aiGame.drawTo((Graphics2D)(g), Tetris.PIXEL_W + 400, 100);
 	      aiRestartButton.setVisible(aiGame.isOver());
 	      
-	      g.setColor(Color.WHITE);
+	      g.setColor(Color.BLACK);
 	      g.drawRect(AI_SPEED_X - 9, AI_SPEED_Y - 5, 82, 122);
 	}
 

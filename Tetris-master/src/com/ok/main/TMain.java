@@ -148,7 +148,7 @@ public class TMain extends JFrame {
 		add(menuBar);
 
 		// Single 滚瓢 包访 贸府
-		singleBtn.setBounds(130, 200, 400, 100);
+		singleBtn.setBounds(440, 200, 400, 100);
 		singleBtn.setBorderPainted(false);
 		singleBtn.setContentAreaFilled(false);
 		singleBtn.setFocusPainted(false);
@@ -229,7 +229,7 @@ public class TMain extends JFrame {
 		add(backBtn);
 
 		// Setting 滚瓢 包访 贸府
-		settingBtn.setBounds(130, 320, 400, 100);
+		settingBtn.setBounds(440, 320, 400, 100);
 		settingBtn.setBorderPainted(false);
 		settingBtn.setContentAreaFilled(false);
 		settingBtn.setFocusPainted(false);
@@ -257,7 +257,7 @@ public class TMain extends JFrame {
 		add(settingBtn);
 
 		// exit 滚瓢 包访 贸府
-		exitBtn.setBounds(130, 440, 400, 100);
+		exitBtn.setBounds(440, 440, 400, 100);
 		exitBtn.setBorderPainted(false);
 		exitBtn.setContentAreaFilled(false);
 		exitBtn.setFocusPainted(false);

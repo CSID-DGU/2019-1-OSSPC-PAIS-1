@@ -6,7 +6,7 @@ Team members
 Ah Yeong Lee, Gwang Jin Lee, Ji Woo Park
 
 Environment
-Linux (UBUNTU) / Eclipse 
+Unix (UBUNTU) / Eclipse 
 
 This Tetris is...
 1. Tetris with AI, using genetic algorithm

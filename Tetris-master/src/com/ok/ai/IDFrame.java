@@ -15,11 +15,11 @@ public class IDFrame extends JFrame{
 	JTextField tf;
 	
 	IDFrame(final int score) {
-		super("ID ÀÔ·Â");
+		super("ID ìž…ë ¥");
 		
 		JLabel lb = new JLabel("ID : ",Label.RIGHT);
 		tf = new JTextField(10);
-		JButton jb =new JButton("È®ÀÎ");
+		JButton jb =new JButton("");
 		jb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				

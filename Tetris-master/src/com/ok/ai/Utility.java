@@ -15,7 +15,7 @@ import javax.swing.ImageIcon;
 
 public class Utility
 {
-	private Utility() {}
+	private Utility() {} // game image and icon setting 
 	
 	public static Image iconToImage(Icon icon)
 	{

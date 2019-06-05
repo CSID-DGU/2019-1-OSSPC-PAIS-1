@@ -1,4 +1,4 @@
-package tetris;
+package com.ok.ai;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -15,18 +15,19 @@ public class IDFrame extends JFrame{
 	JTextField tf;
 	
 	IDFrame(final int score) {
-		super("ID ÀÔ·Â");
+		super("ID �Է�");
 		
 		JLabel lb = new JLabel("ID : ",Label.RIGHT);
 		tf = new JTextField(10);
-		JButton jb =new JButton("È®ÀÎ");
+		JButton jb =new JButton("Ȯ��");
 		jb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				if(tf.getText().equals(""))tf.setText("user");
-				String str=tf.getText();	
-				ScoreFrame sf = new ScoreFrame(str,score);
-				setVisible(false);
-			}
+					String str=tf.getText();
+					ScoreFrame sf = new ScoreFrame(str,score);
+					setVisible(false);
+				}
 		});
 		
 		add(lb);

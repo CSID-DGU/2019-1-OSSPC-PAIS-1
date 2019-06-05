@@ -1,7 +1,8 @@
-package tetris;
+package com.ok.ai;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,20 +11,25 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+
 public class ScoreFrame extends JFrame{
+	
+	TetrisMarathon marathon  = new TetrisMarathon();
+	
 	Scanner file;
 	JLabel j[] = new JLabel[12];
 	
 	ScoreFrame(String name,int sc) {
-		super("ê¸°ë¡");
+		super("±â·Ï");
 		
 		ArrayList<UserList> rank = new ArrayList<UserList>();
 		
 		String id = name;
-		int score = sc;
+		sc = marathon.finalScore;
 		int length = 0;
 		
 		PrintWriter pw = null;
@@ -48,7 +54,7 @@ public class ScoreFrame extends JFrame{
 				length++;
 			}
 		} catch (Exception ex) {
-			System.out.println("íŒŒì¼ì„ ì—¬ëŠ”ë° ë¬¸ì œê°€ ìƒê²¼ìŠµë‹ˆë‹¤");
+			System.out.println("ÆÄÀÏÀ» ¿©´Âµ¥ ¹®Á¦°¡ »ı°å½À´Ï´Ù");
 		}
 		
 		for(int i=0;i<length;i++){
@@ -57,28 +63,44 @@ public class ScoreFrame extends JFrame{
 			}
 		}
 		
-		j[0] = new JLabel("ID : " + name +",   MY SCORE : " + sc);
-		j[1] = new JLabel("-------------------------------------------");
+		JLabel label1;
+		JLabel label2;
+		JLabel label3;
+		
+		label1 = new JLabel("ID : " + name +", " +"MY SCORE : " + sc);
+		label1.setForeground(Color.white);
+		label1.setFont(new Font("¼Ò¾ß°ğÀº10", Font.BOLD, 50));
+		j[0] = label1;
+		
+		label2 = new JLabel("---------------------------");
+		label2.setForeground(Color.white);
+		label2.setFont(new Font("¼Ò¾ß°ğÀº10", Font.BOLD, 50));
+		j[1] = label2;
 		
 		for(int i=0; i<10; i++){
 			if(length<=i)
 				break;
 			else
-				j[i+2] = new JLabel((i+1)+"ë“±!  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore());
+				
+				label3 = new JLabel("          " +(i+1)+"µî!  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore()+"          ");
+				label3.setForeground(Color.white);
+				label3.setFont(new Font("¼Ò¾ß°ğÀº10", Font.BOLD, 37));
+				j[i+2] = label3;
+				
 
 		}
 		for(int i = 0; i<12; i++){
 		add(j[i]);
 		}
 		
-		getContentPane().setBackground(Color.yellow);
+		getContentPane().setBackground(Color.black);
 		setBounds(35, 5, 1295, 725);
 		setLayout(new FlowLayout());
 		setVisible(true);
 	}
 
 	ScoreFrame() {
-		super("ê¸°ë¡");	
+		super("±â·Ï");	
 		ArrayList<UserList> rank = new ArrayList<UserList>();
 		int length = 0;
 		
@@ -94,7 +116,7 @@ public class ScoreFrame extends JFrame{
 				length++;
 			}
 		} catch (Exception ex) {
-			System.out.println("íŒŒì¼ì„ ì—¬ëŠ”ë° ë¬¸ì œê°€ ìƒê²¼ìŠµë‹ˆë‹¤");
+			System.out.println("ÆÄÀÏÀ» ¿©´Âµ¥ ¹®Á¦°¡ »ı°å½À´Ï´Ù");
 		}
 		
 		for(int i=0;i<length;i++){
@@ -103,23 +125,24 @@ public class ScoreFrame extends JFrame{
 			}
 		}
 		
-		j[0] = new JLabel("ì  ìˆ˜ í™• ì¸ ");
+		j[0] = new JLabel("Á¡ ¼ö È® ÀÎ ");
 		j[1] = new JLabel("-------------------------------------------");
 		
 		for(int i=0; i<10; i++){
 			if(length<=i)
 				break;
 			else
-				j[i+2] = new JLabel((i+1)+"ë“±!  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore());
+				j[i+2] = new JLabel((i+1)+"µî!  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore());
 
 		}
 		for(int i = 0; i<12; i++){
 			add(j[i]);
 		}
 		
-		getContentPane().setBackground(Color.yellow);
+		getContentPane().setBackground(Color.black);
 		setBounds(35, 5, 1295, 725);
 		setLayout(new FlowLayout());
 		setVisible(true);	
 	}	
+	
 }

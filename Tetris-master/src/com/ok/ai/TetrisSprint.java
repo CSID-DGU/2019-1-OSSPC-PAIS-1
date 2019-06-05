@@ -32,7 +32,7 @@ public class TetrisSprint extends Tetris
 		
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-		g.setColor(Color.WHITE);
+		g.setColor(Color.BLACK);
 		g.setFont(F_LINES);
 		g.drawString("" + (lines > 0 ? lines : 0) + " lines left", x + 30, y + 10);
 		

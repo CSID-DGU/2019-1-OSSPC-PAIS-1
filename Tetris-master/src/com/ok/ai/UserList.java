@@ -1,5 +1,6 @@
-package tetris;
+package com.ok.ai;
 
+import com.ok.ai.UserList;
 
 public class UserList implements Comparable<UserList>{
 	String id;

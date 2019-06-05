@@ -15,11 +15,11 @@ public class IDFrame extends JFrame{
 	JTextField tf;
 	
 	IDFrame(final int score) {
-		super("ID �Է�");
+		super("ID ÀÔ·Â");
 		
 		JLabel lb = new JLabel("ID : ",Label.RIGHT);
 		tf = new JTextField(10);
-		JButton jb =new JButton("Ȯ��");
+		JButton jb =new JButton("È®ÀÎ");
 		jb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(tf.getText().equals(""))tf.setText("user");
@@ -34,7 +34,7 @@ public class IDFrame extends JFrame{
 		add(jb);
 		
 		this.getContentPane().setBackground(Color.lightGray);
-		setBounds(110, 140, 300, 80);
+		setBounds(510, 150, 300, 200);
 		setLayout(new FlowLayout());
 		setVisible(true);
 		this.pack();

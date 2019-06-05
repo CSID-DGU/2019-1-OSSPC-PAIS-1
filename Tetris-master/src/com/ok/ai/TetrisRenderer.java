@@ -93,18 +93,18 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		exitButton.setBorderPainted(false);
 		exitButton.setContentAreaFilled(false);
 		exitButton.setFocusPainted(false);
-		// exit Button ÀÌº¥Æ® Ã³¸®
+		// exit Button ì´ë²¤íŠ¸ ì²˜ë¦¬
 		exitButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				exitButton.setIcon(exitButtonEnteredImage); // ¸¶¿ì½º°¡ exit ¹öÆ°¿¡ ¿Ã¶ó°¡¸é ÀÌ¹ÌÁö¸¦ ¹Ù²ãÁÜ.
-				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); // ¸¶¿ì½º°¡ ¿Ã¶ó°¡¸é ¼Õ°¡¶ô ¸ğ¾çÀ¸·Î¹Ù²Ş
+				exitButton.setIcon(exitButtonEnteredImage); // ë§ˆìš°ìŠ¤ê°€ exit ë²„íŠ¼ì— ì˜¬ë¼ê°€ë©´ ì´ë¯¸ì§€ë¥¼ ë°”ê¿”ì¤Œ.
+				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR)); // ë§ˆìš°ìŠ¤ê°€ ì˜¬ë¼ê°€ë©´ ì†ê°€ë½ ëª¨ì–‘ìœ¼ë¡œë°”ê¿ˆ
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				exitButton.setIcon(exitButtonBasicImage);
-				exitButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // ¸¶¿ì½º¸¦ ¶¼¸é ´Ù½Ã µğÆúÆ® ¸ğ¾çÀ¸·Î ¹Ù²Ş
+				exitButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // ë§ˆìš°ìŠ¤ë¥¼ ë–¼ë©´ ë‹¤ì‹œ ë””í´íŠ¸ ëª¨ì–‘ìœ¼ë¡œ ë°”ê¿ˆ
 			}
 
 			@Override
@@ -119,16 +119,16 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 		
 		menuBar.setBounds(0, 0, 1280, 30);
 		menuBar.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) { // ¸¶¿ì½º Å¬¸¯ ½Ã x,y ÁÂÇ¥¸¦ ¾ò¾î¿È.
+			public void mousePressed(MouseEvent e) { // ë§ˆìš°ìŠ¤ í´ë¦­ ì‹œ x,y ì¢Œí‘œë¥¼ ì–»ì–´ì˜´.
 				mouseX = e.getX();
 				mouseY = e.getY();
 			}
 		});
-		menuBar.addMouseMotionListener(new MouseMotionAdapter() { // ¸Ş´º¹Ù¸¦ µå·¡±× ÇÒ¶§ È­¸éÀÌ µû¶ó¿À°Ô ÇÏ´Â ÀÌº¥Æ®
+		menuBar.addMouseMotionListener(new MouseMotionAdapter() { // ë©”ë‰´ë°”ë¥¼ ë“œë˜ê·¸ í• ë•Œ í™”ë©´ì´ ë”°ë¼ì˜¤ê²Œ í•˜ëŠ” ì´ë²¤íŠ¸
 			public void mouseDragged(MouseEvent e) {
 				int x = e.getXOnScreen();
 				int y = e.getYOnScreen();
-				frame.setLocation(x - mouseX, y - mouseY); // JFrameÀÇ À§Ä¡¸¦ ¹Ù²ãÁÜ
+				frame.setLocation(x - mouseX, y - mouseY); // JFrameì˜ ìœ„ì¹˜ë¥¼ ë°”ê¿”ì¤Œ
 			}
 		});
 		frame.add(menuBar);
@@ -325,11 +325,13 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 	      g.setColor(Color.BLACK);
 	      g.fillRect(0, 0, 1280, 720);
 	            
+	      aiGame.drawTo((Graphics2D)(g), Tetris.PIXEL_W + 400, 100);
+	      //aiRestartButton.setVisible(aiGame.isOver());
+	      
 	      game.drawTo((Graphics2D)(g), 100, 100);
 	     //restartButton.setVisible(game.isOver());
 	      
-	      aiGame.drawTo((Graphics2D)(g), Tetris.PIXEL_W + 400, 100);
-	      //aiRestartButton.setVisible(aiGame.isOver());
+	      
 	      
 	      g.setColor(Color.WHITE);
 	      g.drawRect(AI_SPEED_X - 9, AI_SPEED_Y+1, 82, 120);

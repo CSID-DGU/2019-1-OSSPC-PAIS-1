@@ -13,7 +13,8 @@ import java.awt.RenderingHints;
 
 public class TetrisMarathon extends Tetris
 {
-	public int points = 0;
+	public int score = 0;
+	protected static int finalScore;
 	
 	public static final int[] VALUES = {0, 100, 175, 350, 700, 1000};
 	
@@ -26,7 +27,7 @@ public class TetrisMarathon extends Tetris
 	
 	public void onLinesCleared(int cleared)
 	{
-		points += VALUES[cleared] * (combo + 1);
+		score += VALUES[cleared] * (combo + 1);
 		if (cleared >= 3)
 			combo++;
 	}
@@ -44,7 +45,7 @@ public class TetrisMarathon extends Tetris
 		g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
 		g.setColor(Color.WHITE);
 		g.setFont(F_LINES);
-		g.drawString("" + points, x + 30, y + 10);
+		g.drawString("" + score, x + 30, y + 10);
 		
 		g.setFont(F_TIME);
 		
@@ -54,11 +55,18 @@ public class TetrisMarathon extends Tetris
 			g.drawString("x " + (combo + 1), x + 140, y + 7);
 		
 		super.drawTo(g, x, y);
+		
+		if(isOver()==true) { 
+			finalScore = score;
+		};
+				
+		
 	}
 	
+
 	public int evaluate()
 	{
-		return super.evaluate() + points / 100;
+		return super.evaluate() + score / 100;
 	}
 
 	public Tetris[] children()

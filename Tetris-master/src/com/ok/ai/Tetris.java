@@ -20,8 +20,9 @@ import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 
+
 public class Tetris
-{
+{	
 	public static final int W = 10;
 	public static final int H = 20;
 
@@ -31,6 +32,7 @@ public class Tetris
 	public static final int FIELD_H = H * SQR_W;
 	public static final int PIXEL_W = FIELD_W + DSP_W * 2;
 	public static final int PIXEL_H = FIELD_H + 60;
+	public static boolean isIDFrame = false;
 	
 	protected static final int TSPIN_ANIMATION_TICKS = 3;
 	public static final BufferedImage[] tspins = new BufferedImage[4];
@@ -196,7 +198,7 @@ public class Tetris
 	public int stored;
 	public boolean hasStored;
 	public int linesCleared;
-	private boolean dead;
+	private boolean dead; //private
 	public long[] flash;
 	private boolean paused;
 	public int tickCount;
@@ -812,6 +814,7 @@ public class Tetris
 		return H - ty - max - height() - 1;
 	}
 
+	//게임판 색
 	protected static final Color C_BACKGROUND = Color.BLACK;
 	protected static final Color C_BORDER = new Color(63, 63, 63);
 	protected static final Color C_SHADOW = new Color(0, 0, 0, 63);
@@ -826,6 +829,7 @@ public class Tetris
 	protected static final Font F_UI = new Font("digital-7", Font.BOLD, 14);
 	protected static final Font F_PAUSE = new Font("digital-7", Font.BOLD, 36);
 	protected static final Font F_GAMEOVER = new Font("digital-7", Font.BOLD, 48);
+	
 	public void drawTo(Graphics2D g, int x, int y)
 	{
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -833,8 +837,8 @@ public class Tetris
 		y += 60;
 
 		g.setColor(C_BACKGROUND);
+		//g.fillRoundRect(x, y, FIELD_W, FIELD_H, 20, 20);
 		g.fillRect(x, y, FIELD_W, FIELD_H);
-
 
 		if (!dead)
 		{
@@ -999,11 +1003,13 @@ public class Tetris
 		g.setColor(Color.WHITE);
 		g.drawRect(x + FIELD_W + 10 + 1, y + 20 + 1, 50 - 2, 50 - 2);
 
-		g.setColor(Color.WHITE);
-		g.drawRect(x, y-84, 200, 70);
+		
+		//점수판 틀
+		g.setColor (Color.WHITE);
+		g.drawRoundRect(x, y-84, 200, 70, 20, 20);
 		
 		if (dead)
-		{
+		{ 
 			g.setColor(new Color(0, 0, 0, 80));
 			g.fillRect(x, y, FIELD_W, FIELD_H);
 			
@@ -1017,6 +1023,13 @@ public class Tetris
 			g.setFont(F_GAMEOVER);
 			drawCentered(g, "GAME", x + FIELD_W / 2, y - 35 + FIELD_H / 2);
 			drawCentered(g, "OVER", x + FIELD_W / 2, y + 35 + FIELD_H / 2);
+			
+			if(isIDFrame == false) {
+				isIDFrame = true;
+				IDFrame sf = new IDFrame(TetrisMarathon.finalScore);
+			}
+			
+			
 		}
 		else if (paused && !isOver())
 		{

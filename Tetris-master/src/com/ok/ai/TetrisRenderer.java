@@ -38,7 +38,6 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 	public static JButton restartButton;
 	public static JButton aiRestartButton;
 	public static JButton swapButton;
-	
 	private static final int OFF_SPEED = 50;
 	private static final int SLOW_SPEED = 400;
 	private static final int MED_SPEED = 125;
@@ -323,17 +322,19 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 	{
 		super.paint(g);
 	      
+		//전체 배경 색
 	      g.setColor(Color.BLACK);
+	      
 	      g.fillRect(0, 0, 1280, 720);
-	            
-	      game.drawTo((Graphics2D)(g), 100, 100);
-	      restartButton.setVisible(game.isOver());
 	      
 	      aiGame.drawTo((Graphics2D)(g), Tetris.PIXEL_W + 400, 100);
-	      aiRestartButton.setVisible(aiGame.isOver());
+	      //aiRestartButton.setVisible(aiGame.isOver());
+	      
+	      game.drawTo((Graphics2D)(g), 100, 100);
+		  //restartButton.setVisible(game.isOver());
 	      
 	      g.setColor(Color.WHITE);
-	      g.drawRect(AI_SPEED_X - 9, AI_SPEED_Y+1, 82, 120);
+	      g.drawRoundRect(AI_SPEED_X - 9, AI_SPEED_Y+1, 82, 120, 20, 20);
 	}
 
 	public void actionPerformed(ActionEvent e)
@@ -347,6 +348,9 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 			else
 				game.tick();
 			aiGame.tick();
+			
+			if (game.isOver())
+				aiGame.die();
 		}
 		else if (source == painter)
 			repaint();

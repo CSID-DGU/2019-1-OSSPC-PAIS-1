@@ -11,7 +11,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+<<<<<<< HEAD
 import javax.swing.JButton;
+=======
+>>>>>>> park-jue
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -62,18 +65,31 @@ public class ScoreFrame extends JFrame{
 				Collections.sort(rank);
 			}
 		}
+<<<<<<< HEAD
 		
+=======
+>>>>>>> park-jue
 		JLabel label1;
 		JLabel label2;
 		JLabel label3;
 		
+<<<<<<< HEAD
 		label1 = new JLabel("ID : " + name +", " +"MY SCORE : " + sc);
+=======
+		
+		label1 = new JLabel("                                                                  ");
+>>>>>>> park-jue
 		label1.setForeground(Color.white);
 		label1.setFont(new Font("家具梆篮10", Font.BOLD, 50));
 		j[0] = label1;
 		
+<<<<<<< HEAD
 		label2 = new JLabel("---------------------------");
 		label2.setForeground(Color.white);
+=======
+		label2 = new JLabel("ID : " + name +",   MY SCORE : " + sc);
+		label2.setForeground(Color.yellow);
+>>>>>>> park-jue
 		label2.setFont(new Font("家具梆篮10", Font.BOLD, 50));
 		j[1] = label2;
 		
@@ -82,9 +98,15 @@ public class ScoreFrame extends JFrame{
 				break;
 			else
 				
+<<<<<<< HEAD
 				label3 = new JLabel("          " +(i+1)+"殿!  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore()+"          ");
 				label3.setForeground(Color.white);
 				label3.setFont(new Font("家具梆篮10", Font.BOLD, 37));
+=======
+				label3 = new JLabel("               "+(i+1)+"困  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore()+"               ");
+				label3.setForeground(Color.white);
+				label3.setFont(new Font("家具梆篮10", Font.BOLD, 40));
+>>>>>>> park-jue
 				j[i+2] = label3;
 				
 
@@ -142,7 +164,12 @@ public class ScoreFrame extends JFrame{
 		getContentPane().setBackground(Color.black);
 		setBounds(35, 5, 1295, 725);
 		setLayout(new FlowLayout());
+<<<<<<< HEAD
 		setVisible(true);	
+=======
+		setVisible(true);
+		
+>>>>>>> park-jue
 	}	
 	
 }

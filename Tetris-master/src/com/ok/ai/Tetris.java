@@ -814,6 +814,7 @@ public class Tetris
 		return H - ty - max - height() - 1;
 	}
 
+	//게임판 색
 	protected static final Color C_BACKGROUND = Color.BLACK;
 	protected static final Color C_BORDER = new Color(63, 63, 63);
 	protected static final Color C_SHADOW = new Color(0, 0, 0, 63);
@@ -836,8 +837,8 @@ public class Tetris
 		y += 60;
 
 		g.setColor(C_BACKGROUND);
+		//g.fillRoundRect(x, y, FIELD_W, FIELD_H, 20, 20);
 		g.fillRect(x, y, FIELD_W, FIELD_H);
-
 
 		if (!dead)
 		{
@@ -1002,8 +1003,15 @@ public class Tetris
 		g.setColor(Color.WHITE);
 		g.drawRect(x + FIELD_W + 10 + 1, y + 20 + 1, 50 - 2, 50 - 2);
 
+<<<<<<< HEAD
 		g.setColor(Color.WHITE);
 		g.drawRect(x, y-84, 200, 70);
+=======
+		
+		//점수판 틀
+		g.setColor (Color.WHITE);
+		g.drawRoundRect(x, y-84, 200, 70, 20, 20);
+>>>>>>> park-jue
 		
 		if (dead)
 		{ 

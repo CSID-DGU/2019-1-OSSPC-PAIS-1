@@ -15,11 +15,19 @@ public class IDFrame extends JFrame{
 	JTextField tf;
 	
 	IDFrame(final int score) {
+<<<<<<< HEAD
 		super("ID ìž…ë ¥");
 		
 		JLabel lb = new JLabel("ID : ",Label.RIGHT);
 		tf = new JTextField(10);
 		JButton jb =new JButton("");
+=======
+		super("ID ÀÔ·Â");
+		
+		JLabel lb = new JLabel("ID : ",Label.RIGHT);
+		tf = new JTextField(10);
+		JButton jb =new JButton("È®ÀÎ");
+>>>>>>> park-jue
 		jb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -40,4 +48,8 @@ public class IDFrame extends JFrame{
 		setVisible(true);
 		this.pack();
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> park-jue

@@ -322,8 +322,11 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 	{
 		super.paint(g);
 	      
+		//전체 배경 색
 	      g.setColor(Color.BLACK);
+	      
 	      g.fillRect(0, 0, 1280, 720);
+<<<<<<< HEAD
 	            
 	      aiGame.drawTo((Graphics2D)(g), Tetris.PIXEL_W + 400, 100);
 	      //aiRestartButton.setVisible(aiGame.isOver());
@@ -335,6 +338,17 @@ public class TetrisRenderer extends Component implements KeyListener, ActionList
 	      
 	      g.setColor(Color.WHITE);
 	      g.drawRect(AI_SPEED_X - 9, AI_SPEED_Y+1, 82, 120);
+=======
+	      
+	      aiGame.drawTo((Graphics2D)(g), Tetris.PIXEL_W + 400, 100);
+	      //aiRestartButton.setVisible(aiGame.isOver());
+	      
+	      game.drawTo((Graphics2D)(g), 100, 100);
+		  //restartButton.setVisible(game.isOver());
+	      
+	      g.setColor(Color.WHITE);
+	      g.drawRoundRect(AI_SPEED_X - 9, AI_SPEED_Y+1, 82, 120, 20, 20);
+>>>>>>> park-jue
 	}
 
 	public void actionPerformed(ActionEvent e)

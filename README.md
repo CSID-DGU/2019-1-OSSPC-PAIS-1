@@ -3,17 +3,21 @@
 Tetris 
 
 Team members
+
 Ah Yeong Lee, Gwang Jin Lee, Ji Woo Park
 
 Environment
+
 Unix (UBUNTU) / Eclipse 
 
 This Tetris is...
+
 1. Tetris with AI, using genetic algorithm
 2. Single Play 
 3. Customizable keys
 
 How to run
+
 1. Download Source
 2. run eclipse, then add to project
 3. open com.ok.main.Main.java and run

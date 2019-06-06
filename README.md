@@ -1,34 +1,39 @@
-﻿2019-1-OSSP-PAIS-1
+﻿[2019-1-OSSP-PAIS-1]
  
+Game
+-------------
 Tetris 
 
 Team members
-
+-------------
 Ah Yeong Lee, Gwang Jin Lee, Ji Woo Park
 
 Environment
-
+-------------
 Unix (UBUNTU) / Eclipse 
 
 This Tetris is...
-
+-----------------
 1. Tetris with AI, using genetic algorithm
 2. Single Play 
 3. Customizable keys
 
 How to run
-
+-------------
 1. Download Source
 2. run eclipse, then add to project
 3. open com.ok.main.Main.java and run
 
 Demo movie
+-------------
 https://ek2.asuscomm.com:3211/sharing/TaoTm52bE
 
 Question
+-------------
 leeay0219@gmail.com
 
 Open Source
+-------------
 1. Original Tetris
 https://github.com/PSNB92/Tetris
 MIT License

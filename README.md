@@ -78,6 +78,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 
 SOFTWARE.
 
-2. Tertis with AI
-Jacob Jackson
+### 2. Tertis with AI
+#### Jacob Jackson
 This program was written by Jacob Jackson. You may modify, copy, or redistribute it in any way you wish, but you must provide credit to me if you use it in your own program.

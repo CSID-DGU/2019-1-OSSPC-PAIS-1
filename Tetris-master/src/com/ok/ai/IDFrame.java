@@ -15,19 +15,17 @@ public class IDFrame extends JFrame{
 	JTextField tf;
 	
 	IDFrame(final int score) {
-<<<<<<< HEAD
 		super("ID 입력");
 		
 		JLabel lb = new JLabel("ID : ",Label.RIGHT);
 		tf = new JTextField(10);
 		JButton jb =new JButton("");
-=======
-		super("ID �Է�");
+		
+		super("ID 입력");
 		
 		JLabel lb = new JLabel("ID : ",Label.RIGHT);
 		tf = new JTextField(10);
-		JButton jb =new JButton("Ȯ��");
->>>>>>> park-jue
+		JButton jb =new JButton("확인");
 		jb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -48,8 +46,5 @@ public class IDFrame extends JFrame{
 		setVisible(true);
 		this.pack();
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> park-jue
+

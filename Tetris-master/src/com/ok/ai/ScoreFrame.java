@@ -11,10 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-<<<<<<< HEAD
 import javax.swing.JButton;
-=======
->>>>>>> park-jue
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -27,7 +24,7 @@ public class ScoreFrame extends JFrame{
 	JLabel j[] = new JLabel[12];
 	
 	ScoreFrame(String name,int sc) {
-		super("±â·Ï");
+		super("ê¸°ë¡");
 		
 		ArrayList<UserList> rank = new ArrayList<UserList>();
 		
@@ -57,7 +54,7 @@ public class ScoreFrame extends JFrame{
 				length++;
 			}
 		} catch (Exception ex) {
-			System.out.println("ÆÄÀÏÀ» ¿©´Âµ¥ ¹®Á¦°¡ »ı°å½À´Ï´Ù");
+			System.out.println("íŒŒì¼ì„ ì—¬ëŠ”ë° ë¬¸ì œê°€ ìƒê²¼ìŠµë‹ˆë‹¤");
 		}
 		
 		for(int i=0;i<length;i++){
@@ -65,32 +62,25 @@ public class ScoreFrame extends JFrame{
 				Collections.sort(rank);
 			}
 		}
-<<<<<<< HEAD
 		
-=======
->>>>>>> park-jue
 		JLabel label1;
 		JLabel label2;
 		JLabel label3;
 		
-<<<<<<< HEAD
 		label1 = new JLabel("ID : " + name +", " +"MY SCORE : " + sc);
-=======
+
 		
 		label1 = new JLabel("                                                                  ");
->>>>>>> park-jue
 		label1.setForeground(Color.white);
-		label1.setFont(new Font("¼Ò¾ß°ğÀº10", Font.BOLD, 50));
+		label1.setFont(new Font("ì†Œì•¼ê³§ì€10", Font.BOLD, 50));
 		j[0] = label1;
 		
-<<<<<<< HEAD
 		label2 = new JLabel("---------------------------");
 		label2.setForeground(Color.white);
-=======
+
 		label2 = new JLabel("ID : " + name +",   MY SCORE : " + sc);
 		label2.setForeground(Color.yellow);
->>>>>>> park-jue
-		label2.setFont(new Font("¼Ò¾ß°ğÀº10", Font.BOLD, 50));
+		label2.setFont(new Font("ì†Œì•¼ê³§ì€10", Font.BOLD, 50));
 		j[1] = label2;
 		
 		for(int i=0; i<10; i++){
@@ -98,15 +88,13 @@ public class ScoreFrame extends JFrame{
 				break;
 			else
 				
-<<<<<<< HEAD
-				label3 = new JLabel("          " +(i+1)+"µî!  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore()+"          ");
+				label3 = new JLabel("          " +(i+1)+"ë“±!  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore()+"          ");
 				label3.setForeground(Color.white);
-				label3.setFont(new Font("¼Ò¾ß°ğÀº10", Font.BOLD, 37));
-=======
-				label3 = new JLabel("               "+(i+1)+"À§  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore()+"               ");
+				label3.setFont(new Font("ì†Œì•¼ê³§ì€10", Font.BOLD, 37));
+
+				label3 = new JLabel("               "+(i+1)+"ìœ„  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore()+"               ");
 				label3.setForeground(Color.white);
-				label3.setFont(new Font("¼Ò¾ß°ğÀº10", Font.BOLD, 40));
->>>>>>> park-jue
+				label3.setFont(new Font("ì†Œì•¼ê³§ì€10", Font.BOLD, 40));
 				j[i+2] = label3;
 				
 
@@ -122,7 +110,7 @@ public class ScoreFrame extends JFrame{
 	}
 
 	ScoreFrame() {
-		super("±â·Ï");	
+		super("ê¸°ë¡");	
 		ArrayList<UserList> rank = new ArrayList<UserList>();
 		int length = 0;
 		
@@ -138,7 +126,7 @@ public class ScoreFrame extends JFrame{
 				length++;
 			}
 		} catch (Exception ex) {
-			System.out.println("ÆÄÀÏÀ» ¿©´Âµ¥ ¹®Á¦°¡ »ı°å½À´Ï´Ù");
+			System.out.println("íŒŒì¼ì„ ì—¬ëŠ”ë° ë¬¸ì œê°€ ìƒê²¼ìŠµë‹ˆë‹¤");
 		}
 		
 		for(int i=0;i<length;i++){
@@ -147,14 +135,14 @@ public class ScoreFrame extends JFrame{
 			}
 		}
 		
-		j[0] = new JLabel("Á¡ ¼ö È® ÀÎ ");
+		j[0] = new JLabel("ì  ìˆ˜ í™• ì¸ ");
 		j[1] = new JLabel("-------------------------------------------");
 		
 		for(int i=0; i<10; i++){
 			if(length<=i)
 				break;
 			else
-				j[i+2] = new JLabel((i+1)+"µî!  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore());
+				j[i+2] = new JLabel((i+1)+"ë“±!  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore());
 
 		}
 		for(int i = 0; i<12; i++){
@@ -164,12 +152,8 @@ public class ScoreFrame extends JFrame{
 		getContentPane().setBackground(Color.black);
 		setBounds(35, 5, 1295, 725);
 		setLayout(new FlowLayout());
-<<<<<<< HEAD
 		setVisible(true);	
-=======
 		setVisible(true);
-		
->>>>>>> park-jue
 	}	
 	
 }

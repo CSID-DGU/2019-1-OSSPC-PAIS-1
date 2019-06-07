@@ -39,7 +39,7 @@ https://github.com/PSNB92/Tetris
 MIT License
 
 Copyright (c) 2017 Brendan Jones
-# using Open Source
+
 ### 1. Original Tetris
 #### https://github.com/PSNB92/Tetris
 MIT License

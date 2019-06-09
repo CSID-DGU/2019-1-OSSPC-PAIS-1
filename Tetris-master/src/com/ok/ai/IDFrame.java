@@ -15,14 +15,8 @@ public class IDFrame extends JFrame{
 	JTextField tf;
 	
 	IDFrame(final int score) {
-		super("ID 입력");
-		
-		JLabel lb = new JLabel("ID : ",Label.RIGHT);
-		tf = new JTextField(10);
-		JButton jb =new JButton("");
 		
 		super("ID 입력");
-		
 		JLabel lb = new JLabel("ID : ",Label.RIGHT);
 		tf = new JTextField(10);
 		JButton jb =new JButton("확인");

@@ -87,10 +87,6 @@ public class ScoreFrame extends JFrame{
 			if(length<=i)
 				break;
 			else
-				
-				label3 = new JLabel("          " +(i+1)+"등!  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore()+"          ");
-				label3.setForeground(Color.white);
-				label3.setFont(new Font("소야곧은10", Font.BOLD, 37));
 
 				label3 = new JLabel("               "+(i+1)+"위  ID : " + rank.get(i).getID() + ", SCORE : " + rank.get(i).getScore()+"               ");
 				label3.setForeground(Color.white);

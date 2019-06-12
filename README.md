@@ -1,10 +1,15 @@
 PROJECT NAME
 -------------
 [2019-1-OSSP-PAIS-1]
+(Mirrored from https://github.com/CSID-DGU/2018-1-OSSP-2-6) 
  
 GAME
 -------------
 TETRIS
+
+WHAT HAS BEEN CHANGED FROM 2018 PROJECT? 
+-------------------------------------
+Check final PDF 
 
 TEAM MEMBERS
 -------------

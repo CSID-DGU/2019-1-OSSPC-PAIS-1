@@ -11,21 +11,21 @@ WHAT HAS BEEN CHANGED FROM 2018 PROJECT?
 -------------------------------------
 _**Check final presentation PDF for more Information**_
 
-### 1. Main Screen UI Change
+### 1. Change Main Screen UI 
 
 **(Eliminate Multi Mode & Add Background)**
 
 ###### ![Main screen UI change](https://user-images.githubusercontent.com/35085704/59332230-b4a26900-8d30-11e9-9e1b-076baa7f2e5d.PNG)
 
 
-### 2. Game Screen UI Change 
+### 2. Change Game Screen UI 
 
 **(Add score system, time, lines cleared, combo / Change JButton Design & Fonts / Game Over on both User and Computer)**
 
 ![Game screen Change](https://user-images.githubusercontent.com/35085704/59332306-e0255380-8d30-11e9-8869-fb24b42a7227.PNG)
 
 
-### 3. Ranking System 
+### 3. Build Ranking System 
 
 **(Use File I/O to get ID from user after game is over, then save it on Score.txt file, then show it on Ranking Frame)**
 

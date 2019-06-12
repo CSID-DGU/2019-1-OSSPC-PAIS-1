@@ -9,10 +9,28 @@ TETRIS
 
 WHAT HAS BEEN CHANGED FROM 2018 PROJECT? 
 -------------------------------------
-Check final PDF for more Information
-![Main Screen UI Change](Main screen UI change.PNG)
-![Game Screen UI Change](Game screen Change.PNG)
-![Add Ranking System](Ranking System Add.PNG)
+_**Check final presentation PDF for more Information**_
+
+### 1. Main Screen UI Change
+
+**(Eliminate Multi Mode & Add Background)**
+
+###### ![Main screen UI change](https://user-images.githubusercontent.com/35085704/59332230-b4a26900-8d30-11e9-9e1b-076baa7f2e5d.PNG)
+
+
+### 2. Game Screen UI Change 
+
+**(Add score system, time, lines cleared, combo / Change JButton Design & Fonts / Game Over on both User and Computer)**
+
+![Game screen Change](https://user-images.githubusercontent.com/35085704/59332306-e0255380-8d30-11e9-8869-fb24b42a7227.PNG)
+
+
+### 3. Ranking System 
+
+**(Use File I/O to get ID from user after game is over, then save it on Score.txt file, then show it on Ranking Frame)**
+
+![Ranking System Add](https://user-images.githubusercontent.com/35085704/59332386-0a771100-8d31-11e9-856a-ed06968026ef.PNG)
+
 
 TEAM MEMBERS
 -------------

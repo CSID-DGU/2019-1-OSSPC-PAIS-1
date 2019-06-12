@@ -10,9 +10,9 @@ TETRIS
 WHAT HAS BEEN CHANGED FROM 2018 PROJECT? 
 -------------------------------------
 Check final PDF for more Information
-![Main Screen UI Change](/Images/Main screen UI change.png)
-![Game Screen UI Change](/Images/Game screen Change.png)
-![Add Ranking System](/Images/Ranking System Add.png)
+![Main Screen UI Change](Main screen UI change.png)
+![Game Screen UI Change](Game screen Change.png)
+![Add Ranking System](Ranking System Add.png)
 
 TEAM MEMBERS
 -------------

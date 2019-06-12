@@ -54,7 +54,11 @@ HOW TO RUN
 
 DEMO VIDEO
 -------------
+## Original Demo Video
 https://www.youtube.com/watch?v=EbiRPEAHSeo
+
+## PAIS Final Demo Video (Speed Rate: x 4 faster)
+![TetrisDemo](https://user-images.githubusercontent.com/35085704/59334575-c76b6c80-8d35-11e9-8f67-c2a75de90599.gif)
 
 ANY QUESTION
 -------------
